@@ -1,16 +1,14 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Shape {
 public:
     virtual double CalculationArea() {
-        cout << "Calculating area of a generic shape" << endl;
+        cout << "Вычисление площади обобщенной фигуры" << endl;
         return 0.0;
     }
 };
-
 
 class Circle : public Shape {
 private:
@@ -24,7 +22,6 @@ public:
     }
 };
 
-
 class Rectangle : public Shape {
 private:
     double length;
@@ -37,7 +34,6 @@ public:
         return length * width;
     }
 };
-
 
 class Triangle : public Shape {
 private:
@@ -53,13 +49,14 @@ public:
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Circle circle(5.0);
     Rectangle rectangle(4.0, 6.0);
     Triangle triangle(3.0, 4.0);
 
-    cout << "Circle Area: " << circle.CalculationArea() << endl;
-    cout << "Rectangle Area: " << rectangle.CalculationArea() << endl;
-    cout << "Triangle Area: " << triangle.CalculationArea() << endl;
+    cout << "Площадь круга: " << circle.CalculationArea() << endl;
+    cout << "Площадь прямоугольника: " << rectangle.CalculationArea() << endl;
+    cout << "Площадь треугольника: " << triangle.CalculationArea() << endl;
 
     return 0;
 }
