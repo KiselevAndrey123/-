@@ -1,16 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Animal {
 public:
     virtual void move() {
-        cout << "Animal is moving" << endl;
+        cout << "Животное движется" << endl;
     }
 
     virtual void makeSound() {
-        cout << "Animal sound" << endl;
+        cout << "Звук животного" << endl;
     }
 };
 
@@ -18,11 +17,11 @@ public:
 class Bird : public Animal {
 public:
     void move() override {
-        cout << "Bird is flying" << endl;
+        cout << "Птица летит" << endl;
     }
 
     void makeSound() override {
-        cout << "Tweet tweet" << endl;
+        cout << "Чирик-чирик" << endl;
     }
 };
 
@@ -30,22 +29,23 @@ public:
 class Panthera : public Animal {
 public:
     void move() override {
-        cout << "Panthera is running" << endl;
+        cout << "Пантера бежит" << endl;
     }
 
     void makeSound() override {
-        cout << "Roar" << endl;
+        cout << "Рев" << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Bird bird;
     Panthera panthera;
 
-    bird.move();     
+    bird.move();
     bird.makeSound();
-    
-    panthera.move();     
-    panthera.makeSound(); 
+
+    panthera.move();
+    panthera.makeSound();
     return 0;
 }
