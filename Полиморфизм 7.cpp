@@ -1,40 +1,37 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Vehicle {
 public:
     virtual void SpeedUp() {
-        cout << "Vehicle is speeding up" << endl;
+        cout << "Транспортное средство ускоряется" << endl;
     }
 };
-
 
 class Car : public Vehicle {
 public:
     void SpeedUp() override {
-        cout << "Car is accelerating" << endl;
+        cout << "Автомобиль ускоряется" << endl;
     }
 };
-
 
 class Bicycle : public Vehicle {
 public:
     void SpeedUp() override {
-        cout << "Bicycle is pedaling faster" << endl;
+        cout << "Велосипед набирает скорость" << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Vehicle* car = new Car();
     Vehicle* bicycle = new Bicycle();
 
-    car->SpeedUp();     
-    bicycle->SpeedUp(); 
+    car->SpeedUp();
+    bicycle->SpeedUp();
 
-    delete car;
-    delete bicycle;
+   
 
     return 0;
 }
