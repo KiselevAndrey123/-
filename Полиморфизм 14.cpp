@@ -1,7 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class BankAccount {
 protected:
@@ -12,11 +11,11 @@ public:
 
     void deposit(double amount) {
         balance += amount;
-        cout << "Deposited: $" << amount << endl;
+        cout << "Внесено: $" << amount << endl;
     }
 
     virtual void withdraw(double amount) {
-        cout << "Withdrawal from a generic bank account" << endl;
+        cout << "Списание с общего банковского счета" << endl;
     }
 };
 
@@ -25,35 +24,35 @@ public:
     void withdraw(double amount) override {
         if (amount <= balance) {
             balance -= amount;
-            cout << "Withdrawn: $" << amount << " from Savings Account" << endl;
+            cout << "Снято: $" << amount << " со сберегательного счета" << endl;
         }
         else {
-            cout << "Insufficient funds in Savings Account" << endl;
+            cout << "Недостаточно средств на сберегательном счете" << endl;
         }
     }
 };
 
-
 class CheckingAccount : public BankAccount {
 public:
     void withdraw(double amount) override {
-        double fee = 1.5; 
-        double limit = 1000.0; 
+        double fee = 1.5;
+        double limit = 1000.0;
 
         if (amount + fee <= balance && amount <= limit) {
             balance -= (amount + fee);
-            cout << "Withdrawn: $" << amount << " from Checking Account with a fee of $" << fee << endl;
+            cout << "Снято: $" << amount << " с чекового счета с комиссией $" << fee << endl;
         }
         else if (amount > limit) {
-            cout << "Exceeded withdrawal limit for Checking Account" << endl;
+            cout << "Превышен лимит на снятие для чекового счета" << endl;
         }
         else {
-            cout << "Insufficient funds in Checking Account" << endl;
+            cout << "Недостаточно средств на чековом счете" << endl;
         }
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     SavingsAccount savings;
     CheckingAccount checking;
 
