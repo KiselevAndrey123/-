@@ -1,52 +1,50 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Vehicle {
 public:
     virtual void startEngine() {
-        cout << "Starting the engine of a generic vehicle" << endl;
+        cout << "Запуск двигателя у общего транспортного средства" << endl;
     }
 
     virtual void stopEngine() {
-        cout << "Stopping the engine of a generic vehicle" << endl;
+        cout << "Остановка двигателя у общего транспортного средства" << endl;
     }
 };
-
 
 class Car : public Vehicle {
 public:
     void startEngine() override {
-        cout << "Starting the engine of a car" << endl;
+        cout << "Запуск двигателя у автомобиля" << endl;
     }
 
     void stopEngine() override {
-        cout << "Stopping the engine of a car" << endl;
+        cout << "Остановка двигателя у автомобиля" << endl;
     }
 };
-
 
 class Motorcycle : public Vehicle {
 public:
     void startEngine() override {
-        cout << "Starting the engine of a motorcycle" << endl;
+        cout << "Запуск двигателя у мотоцикла" << endl;
     }
 
     void stopEngine() override {
-        cout << "Stopping the engine of a motorcycle" << endl;
+        cout << "Остановка двигателя у мотоцикла" << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Car car;
     Motorcycle motorcycle;
 
-    car.startEngine();   
-    car.stopEngine();    
+    car.startEngine();
+    car.stopEngine();
 
-    motorcycle.startEngine(); 
-    motorcycle.stopEngine();  
+    motorcycle.startEngine();
+    motorcycle.stopEngine();
 
     return 0;
 }
