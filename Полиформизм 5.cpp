@@ -1,5 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
+
 class Circle {
 private:
     double x;
@@ -17,11 +18,12 @@ public:
     Circle() : x(0), y(0), radius(1.0) {}
 
     void printInfo() {
-        cout << "Circle center: (" << x << ", " << y << "), Radius: " << radius << endl;
+        cout << "Центр окружности: (" << x << ", " << y << "), Радиус: " << radius << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL,"RU");
     Circle circle1(5.0);
     Circle circle2(2.0, 3.0);
     Circle circle3(1.0, 1.0, 4.0);
