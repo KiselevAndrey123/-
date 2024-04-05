@@ -1,12 +1,11 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Employee {
 public:
     virtual double CalculateSalary() {
-        cout << "Calculating salary for a generic employee" << endl;
+        cout << "Вычисление зарплаты для обычного сотрудника" << endl;
         return 0.0;
     }
 };
@@ -38,11 +37,12 @@ public:
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Manager manager(50000.0, 10000.0);
     Programmer programmer(50.0, 160.0);
 
-    cout << "Manager's Salary: " << manager.CalculateSalary() << endl;
-    cout << "Programmer's Salary: " << programmer.CalculateSalary() << endl;
+    cout << "Зарплата менеджера: " << manager.CalculateSalary() << endl;
+    cout << "Зарплата программиста: " << programmer.CalculateSalary() << endl;
 
     return 0;
 }
