@@ -1,46 +1,44 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
-
 
 class Sports {
 public:
     virtual void play() {
-        cout << "Playing a generic sport" << endl;
+        cout << "Играем в общий вид спорта" << endl;
     }
 };
-
 
 class Football : public Sports {
 public:
     void play() override {
-        cout << "Playing football" << endl;
+        cout << "Играем в футбол" << endl;
     }
 };
-
 
 class Basketball : public Sports {
 public:
     void play() override {
-        cout << "Playing basketball" << endl;
+        cout << "Играем в баскетбол" << endl;
     }
 };
 
 class Rugby : public Sports {
 public:
     void play() override {
-        cout << "Playing rugby" << endl;
+        cout << "Играем в регби" << endl;
     }
 };
 
 int main() {
+    setlocale(LC_ALL, "RU");
     Football football;
     Basketball basketball;
     Rugby rugby;
 
-    football.play();   
-    basketball.play(); 
-    rugby.play();      
+    football.play();
+    basketball.play();
+    rugby.play();
 
     return 0;
 }
